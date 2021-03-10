@@ -1,16 +1,18 @@
 program Hello;
 Uses Math;
-var x, s, e :real; n :integer;
+var x, s, e, f :real; n :integer;
 begin
   x := 3.48;
-  n := 1;
   s := 0;
-  e := tan(x/n)/2*n;
-  while e > 0.001 do
+  e := 1;
+  n := 1;
+  f := 1;
+  while abs(e) > 0.001 do
   begin 
+    e :=(tan(x/n))/(2*f);
     s := s + e;
     inc(n);
-    e := e/n;
+    f := f*n;
   end;
   writeln(s:0:3);
 end.
